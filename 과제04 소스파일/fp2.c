@@ -3,11 +3,11 @@
 int menu()
 {
     printf("=====================\n");
-    printf("0. ë§ì…ˆ\n");
-    printf("1. ëº„ì…ˆ\n");
-    printf("2. ê³±ì…ˆ\n");
-    printf("3. ë‚˜ëˆ—ì…ˆ\n");
-    printf("4. ì¢…ë£Œ\n");
+    printf("0. µ¡¼À\n");
+    printf("1. »¬¼À\n");
+    printf("2. °ö¼À\n");
+    printf("3. ³ª´°¼À\n");
+    printf("4. Á¾·á\n");
     printf("=====================\n");
 }
 
@@ -40,7 +40,7 @@ int main()
     while(1)
     {
         menu();
-        printf("ë©”ë‰´ë¥¼ ì„ íƒí•˜ì‹œì˜¤:");
+        printf("¸Ş´º¸¦ ¼±ÅÃÇÏ½Ã¿À:");
         scanf("%d", &choice);
 
         if(choice < 0 || choice >= 4)
@@ -48,11 +48,11 @@ int main()
             break;
         }
 
-        printf("2ê°œì˜ ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì‹œì˜¤:");
+        printf("2°³ÀÇ Á¤¼ö¸¦ ÀÔ·ÂÇÏ½Ã¿À:");
         scanf("%d %d", &x, &y);
 
         result = pf[choice](x,y);
 
-        printf("ì—°ì‚° ê²°ê³¼ = %d\n", result);
+        printf("¿¬»ê °á°ú = %d\n", result);
     }
 }
