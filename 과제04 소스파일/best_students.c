@@ -34,9 +34,7 @@ int main()
     }
 
     for(int i = 0; i < 10; i++)
-    {
         printf("%d, %s, %.2lf\n", list[i].number, list[i].name, list[i].grade);
-    }
 
     return 0;
 }
