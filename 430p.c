@@ -11,7 +11,7 @@ int main()
     }
     for(int k=0; k<6; k++)
     {
-        printf("%d,", dice[k]);
+        printf("%d,", dice[k]); 
     }
     
 }
