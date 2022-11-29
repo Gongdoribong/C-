@@ -1,39 +1,39 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+#include <string.h>
 
-int main()
+struct student {
+    int number;
+    char name[10];
+    double grade;
+};
+
+int main(void)
 {
-    char array[3][2] = {{'a', 'b'}, {'c','d'},{'e','f'}};
-    for(int i = 0; i<3; i++)
+    struct student list[100];
+    struct student super_stu;
+    struct student bad_stu;
+    int i,size,j;
+
+    for (i = 0; i < 10; i++)
     {
-        for(int j = 0; j<2; j++)
+        printf("학생의 학번과 이름, 성적을 차례대로 입력하시오: ");
+        scanf("%d %s %lf", &list[i]. number, list[i].name, &list[i].grade);
+    }
+
+    for (i = 0; i < 10; i++)
+    {
+        for (j = 0; j < 10; j++)
         {
-            printf("%c", array[i][j]);
+            if (list[i].grade > list[j].grade)
+            {
+                super_stu = list[i];
+                list[i] = list[j];
+                list[j] = super_stu;
+            }
         }
     }
-    printf(" <- 변경 전 main 함수\n");
 
-    test(array);
-    for(int i = 0; i<3; i++)
-    {
-        for(int j = 0; j<2; j++)
-        {
-            printf("%c", array[i][j]);
-        }
-    }
-    printf(" <- 변경 후 main 함수\n");
-
-}
-
-int test(char array[3][2])
-{
-    array[0][0] = 'x';
-    for(int i = 0; i<3; i++)
-    {
-        for(int j = 0; j<2; j++)
-        {
-            printf("%c", array[i][j]);
-        }
-    }
-    printf("<- 변경 후 test 함수\n");
-    
+    for (i=0; i<10; i++)
+        printf("학번:%d 이름:%s 학점:%lf\n", list[i].number, list[i].name, list[i].grade);
 }
