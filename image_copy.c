@@ -7,14 +7,14 @@ int main()
     char buffer[1024];
     int r_count;
 
-    printf("ì´ë¯¸ì§€ íŒŒì¼ ì´ë¦„: ");
+    printf("ÀÌ¹ÌÁö ÆÄÀÏ ÀÌ¸§: ");
     scanf("%s", filename);
 
     src_file = fopen(filename, "rb");
     dst_file = fopen("copy.jpg", "wb");
     if( src_file==NULL || dst_file == NULL)
     {
-        fprintf(stderr, "íŒŒì¼ ì—´ê¸° ì˜¤ë¥˜ \n");
+        fprintf(stderr, "ÆÄÀÏ ¿­±â ¿À·ù \n");
         return 1;
     }
     while ((r_count = fread(buffer, 1, sizeof(buffer), src_file)) > 0)
@@ -22,17 +22,17 @@ int main()
         int w_count = fwrite(buffer, 1, r_count, dst_file);
         if( w_count < 0)
         {
-            fprintf(stderr, "íŒŒì¼ ì“°ê¸° ì˜¤ë¥˜ \n");
+            fprintf(stderr, "ÆÄÀÏ ¾²±â ¿À·ù \n");
             return 1;
         }
         if( w_count < r_count )
         {
-            fprintf(stderr, "ë¯¸ë””ì–´ ì“°ê¸° ì˜¤ë¥˜ \n");
+            fprintf(stderr, "¹Ìµð¾î ¾²±â ¿À·ù \n");
             return 1;
         }
     }
     
-    printf("copy.jpgë¡œ ì´ë¯¸ì§€ íŒŒì¼ì´ ë³µì‚¬ë¨ \n");
+    printf("copy.jpg·Î ÀÌ¹ÌÁö ÆÄÀÏÀÌ º¹»çµÊ \n");
     fclose(src_file);
     fclose(dst_file);
     
