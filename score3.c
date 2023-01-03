@@ -9,18 +9,18 @@ int main()
     char name[20];
     float score, total = 0.0;
 
-    printf("ì„±ì  íŒŒì¼ ì´ë¦„ì„ ì…ë ¥í•˜ì‹œì˜¤: ");
+    printf("¼ºÀû ÆÄÀÏ ÀÌ¸§À» ÀÔ·ÂÇÏ½Ã¿À: ");
     scanf("%s", fname);
 
     if( (fp = fopen(fname, "w")) == NULL )
     {
-        fprintf(stderr, "ì„±ì  íŒŒì¼ %sì„ ì—´ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.\n", fname);
+        fprintf(stderr, "¼ºÀû ÆÄÀÏ %sÀ» ¿­ ¼ö ¾ø½À´Ï´Ù.\n", fname);
         exit(1);
     }
 
     while(1)
     {
-        printf("í•™ë²ˆ, ì´ë¦„, ì„±ì ì„ ì…ë ¥í•˜ì‹œì˜¤: (ìŒìˆ˜ì´ë©´ ì¢…ë£Œ)");
+        printf("ÇĞ¹ø, ÀÌ¸§, ¼ºÀûÀ» ÀÔ·ÂÇÏ½Ã¿À: (À½¼öÀÌ¸é Á¾·á)");
         scanf("%d", &number);
         if( number < 0 ) break;
         scanf("%s %f", name, &score);
@@ -30,7 +30,7 @@ int main()
 
     if( (fp = fopen(fname, "r")) == NULL )
     {
-        fprintf(stderr, "ì„±ì  íŒŒì¼ %sì„ ì—´ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.\n", fname);
+        fprintf(stderr, "¼ºÀû ÆÄÀÏ %sÀ» ¿­ ¼ö ¾ø½À´Ï´Ù.\n", fname);
         exit(1);
     }
 
@@ -41,7 +41,7 @@ int main()
         count++;
     }
 
-    printf("í‰ê·  = %f\n", total/count);
+    printf("Æò±Õ = %f\n", total/count);
     fclose(fp);
 
     return 0;
